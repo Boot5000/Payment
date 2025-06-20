@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment App</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+        }
+        .gradient-bg-alt {
+             background: linear-gradient(120deg, #654ea3, #eaafc8);
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .icon-glow {
+            text-shadow: 0 0 8px rgba(234, 175, 200, 0.7);
+        }
+    </style>
+</head>
+<body class="gradient-bg flex items-center justify-center min-h-screen p-4">
+<div class="w-full max-w-md mx-auto">
+<div class="bg-slate-800/60 backdrop-blur-md shadow-2xl rounded-3xl p-6 text-white">
+<div class="flex justify-between items-center mb-6">
+<span class="material-icons text-pink-300">arrow_back_ios</span>
+<h1 class="text-xl font-semibold text-gray-100">Make a Payment</h1>
+<span class="material-icons text-pink-300">more_vert</span>
+</div>
+<div class="gradient-bg-alt p-6 rounded-2xl shadow-lg mb-8">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm text-purple-100 opacity-80">Available Balance</p>
+<p class="text-3xl font-bold text-white mt-1">$1,234.56</p>
+</div>
+<span class="material-icons text-white text-3xl">account_balance_wallet</span>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<p class="text-sm text-purple-100 opacity-80">**** **** **** 1234</p>
+<img alt="Mastercard logo" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkcAbsxvuxeZcLGmndy2_0SJl0W_RXFCmDxPYWQVvTU5D1GYvfpnGjrToM9AsejESjTdLZZD8cBorvou16tqVl1kYj6u5gvWU4PxAI5cKt40kyAcCLPdX-_HfMwpnPyqNPq0iW4qcf7nNptECWo711OOVZ4pC0ynU4YrqHu_lklSLNg4ydSGjYBdFEHjUKmMI2IEaWS9gc1p_ZE9rkqUZuBC3HX4ZjWG8mZNhirpMkT5Hz_8EpywaP9UyXpfFKwc9qUNfggHLo1g"/> 
+</div>
+</div>
+<div class="mb-8">
+<h2 class="text-lg font-medium text-gray-200 mb-4">Payment Details</h2>
+<div class="space-y-4">
+<div class="glassmorphism p-4 flex items-center space-x-4">
+<span class="material-icons text-pink-400 icon-glow text-3xl">person_outline</span>
+<div>
+<p class="text-xs text-gray-400">Recipient</p>
+<p class="text-gray-100">John Doe</p>
+</div>
+</div>
+<div class="glassmorphism p-4 flex items-center space-x-4">
+<span class="material-icons text-pink-400 icon-glow text-3xl">receipt_long</span>
+<div>
+<p class="text-xs text-gray-400">Reference</p>
+<p class="text-gray-100">INV-2023-007</p>
+</div>
+</div>
+<div class="glassmorphism p-4">
+<label class="block text-xs text-gray-400 mb-1" for="amount">Amount</label>
+<input class="w-full bg-transparent text-2xl text-white font-semibold border-0 focus:ring-0 p-0" id="amount" type="text" value="$50.00"/>
+</div>
+</div>
+</div>
+<button class="w-full gradient-bg-alt text-white font-semibold py-4 rounded-xl shadow-md hover:opacity-90 transition-opacity duration-300">
+                Confirm Payment
+            </button>
+<div class="mt-8 flex justify-around items-center pt-4 border-t border-slate-700/50">
+<div class="flex flex-col items-center text-pink-300">
+<span class="material-icons text-2xl icon-glow">home</span>
+<span class="text-xs mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center text-gray-400 hover:text-pink-300 transition-colors">
+<span class="material-icons text-2xl">payment</span>
+<span class="text-xs mt-1">Payments</span>
+</div>
+<div class="flex flex-col items-center text-gray-400 hover:text-pink-300 transition-colors">
+<span class="material-icons text-2xl">show_chart</span>
+<span class="text-xs mt-1">Activity</span>
+</div>
+<div class="flex flex-col items-center text-gray-400 hover:text-pink-300 transition-colors">
+<span class="material-icons text-2xl">settings</span>
+<span class="text-xs mt-1">Settings</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+        // Create a dummy image for mastercard logo if it doesn't exist
+        if (!document.querySelector('img[src="image-mastercard-logo.png"]')) {
+            const img = document.createElement('img');
+            img.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' viewBox='0 0 40 25'%3E%3Crect width='40' height='25' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%23333'%3EMC Logo%3C/text%3E%3C/svg%3E";
+            img.alt = "Mastercard logo";
+            img.classList.add("w-10", "h-auto");
+            const placeholderImg = document.querySelector('img[alt="Mastercard logo"]');
+            if (placeholderImg) {
+                 placeholderImg.parentNode.replaceChild(img, placeholderImg);
+            }
+        }
+    </script>
+
+</body></html>
